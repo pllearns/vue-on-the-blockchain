@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+##### There are instructions to build this app for production, but keep in mind that we wont be pushing this component to production during our walkthrough.
+
 ``` bash
 # install dependencies
 npm install
@@ -11,8 +13,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-There are instructions to build this app for production, but keep in mind that we
-wont be pushing this component to production during our walkthrough. 
 
 # build for production with minification
 npm run build
