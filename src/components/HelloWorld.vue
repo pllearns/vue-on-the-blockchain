@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <button type="button" @click="generateConsoleLogTest()">Generate a console log</button>
+    <button type="button" @click="generateContract()">Generate a contract</button>
   </div>
 </template>
 
 <script>
 import web3 from 'web3'
+let provider = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'))
+let contract = require('truffle-contract')
 
 export default {
   name: 'HelloWorld',
@@ -16,8 +18,14 @@ export default {
     }
   },
   methods: {
-    generateConsoleLogTest () {
-      console.log(web3);
+    generateContract () {
+      let MyContract = contract({
+        abi: '',
+        unlinked_binary: '',
+        address: '0x3ef102fabe4f17119f7759a6f51db8f8835f8062'
+      })
+      MyContract.setProvider(provider); // undefined!!!
+      console.log('Is there a contract here? ', MyContract);
     }
   }
 }
