@@ -1,24 +1,24 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <SimpleVueExample/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import SimpleVueExample from './components/SimpleVueExample'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    SimpleVueExample
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'SF Pro display', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
