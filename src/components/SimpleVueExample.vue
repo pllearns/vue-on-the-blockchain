@@ -1,14 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ showAccount }}</h1>
-    <h3>{{ showBalance }}</h3>
     <input v-model="amount" placeholder="word?">
     <button type="button" @click="store()">Store Data </button>
     <button type="button" @click="get()">Get Data</button>
     <h3>{{ confirmWord }}</h3>
     <h3>{{ transactionMsg }}</h3>
-    <h4>{{ showGas }}</h4>
     <h4>{{ showBlockNumber }}</h4>
+    <button type="button" @click="showGasPrice()">Get Gas Price</button>
+    <h4>{{ gasPrice }}</h4>
+    <button type="button" @click="balance()">Get Balance</button>
+    <h4>{{ newBalance }}</h4>
   </div>
 </template>
 
@@ -28,41 +30,44 @@ let contract = MyContract.at('0x5c4c67c327c3379566e08ae1adf3b7eddb072fc6');
 
 export default {
   name: 'SimpleVueExample',
+
   data () {
     return {
       amount: '',
       confirmWord: '',
       msg: 'Your Account ',
-      balanceMsg: 'Your balance ',
-      gasPriceMsg: 'Gas Price? ',
       transactionMsg: 'Transaction ',
-      blockMsg: 'Which Block Number? '
+      blockMsg: 'Which Block Number? ',
+      newBalance: null,
+      gasPrice: null
     }
   },
+
   methods: {
     store () {
       contract.set(this.amount)
       alert(contract.set(this.amount))
     },
     get () {
-      alert(provider.toAscii(contract.get()))
+      this.confirmWord = provider.toAscii(contract.get())
     },
+    balance() {
+      this.newBalance = Number(balance)
+    },
+    showGasPrice() {
+     this.gasPrice = Number(provider.eth.gasPrice)
+    }
   },
     computed: {
       showAccount: function() {
         return this.msg + provider.eth.defaultAccount
-      },
-      showBalance: function(){
-        return this.balanceMsg + balance
-      },
-      showGas: function() {
-        return this.gasPriceMsg + provider.eth.gasPrice
       },
       showBlockNumber: function () {
         return this.blockMsg + provider.eth.blockNumber
       }
     },
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
