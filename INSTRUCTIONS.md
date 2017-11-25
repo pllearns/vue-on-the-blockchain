@@ -170,7 +170,7 @@ Also, notice `v-model` and `@click`. These are directives (like Angular) which a
 
 Here are some more resources to help you dissect this small example: 
 
-[Vue Documentation](https://vuejs.org/v2/guide/)
-[Solidity Documentation](http://solidity.readthedocs.io/en/develop/)
-[Web3 Documentation](https://github.com/ethereum/web3.js/)
+- [Vue Documentation](https://vuejs.org/v2/guide/)
+- [Solidity Documentation](http://solidity.readthedocs.io/en/develop/)
+- [Web3 Documentation](https://github.com/ethereum/web3.js/)
 
