@@ -1,5 +1,7 @@
 # vue-blockchain-talk
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/pllearns/vue-on-the-blockchain?branch=master)](https://bettercodehub.com/)
+
 > A Vue.js project that uses the power of Vue with a solidity contract and web3. All we are doing is creating a single interactive component to execute a contract on the ethereum network.
 
 ## Getting Started
